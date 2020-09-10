@@ -1,0 +1,17 @@
+<div class="{% if site.style == 'dark' %}box-shadow{% else %}border border-gray-light{% endif %} bg-white rounded-1 p-3 m-3">
+    <div class="h3">{{ project.name }}</div>
+    <div><b>{{ project.timeline }}</b> | <i>{{ project.tech_used }}</i></div>
+    <table class="m-2">
+        <tr><td class="py-1 pr-2 text-bold v-align-baseline">Summary:</td><td class="py-1">{{ project.summary }}</td></tr>
+        <tr><td class="py-1 pr-2 text-bold v-align-baseline">Problem:</td><td class="py-1">{{ project.problem }}</td></tr>
+        <tr><td class="py-1 pr-2 text-bold v-align-baseline">Solution:</td><td class="py-1">{{ project.solution }}</td></tr>
+        <tr><td class="py-1 pr-2 text-bold v-align-baseline">Results:</td><td class="py-1">{{ project.results }}</td></tr>
+        <tr><td class="py-1 pr-2 text-bold v-align-baseline">Links:</td>
+            <td class="py-1">
+                {% for link in project.links %}
+                    <a href="{{ link.link }}">{{ link.type }}</a> {%if forloop.last == false %} | {% endif %}
+                {% endfor %}
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,73 @@
+- name: Svelte Open Application
+  timeline: Summer 2020
+  summary: Making web applications editable by end users.
+  tech_used: Svelte, Lumino, Rollup
+  problem: There were many moments working for Recess when I thought, "If only I could make a small change to our software right here, it would take 30 minutes and solve the problem." But I could not make a small change right there, and had to replicate much functionality over two weeks. Similarly, while working on VS Code extensions, I was frustrated by the limitations of the plugin architecture and the slow development cycle. "There has to be a way to make web applications more pliable," I thought.
+  solution: The proof of concept is implemented as a series of Rollup plugins. The first plugin performs a simple file transformation at build time, converting component imports from static build-time bindings to reactive run-time resolutions from a dependency store. Helper functions fetch component source code and compile that code to a live Svelte component in-browser. The second plugin wraps the application root in a Lumino widget and provides functions for toggling the visibility of a paned Lumino layout (i.e., switching between "run mode" and "edit mode"). The third plugin provides simple development tools within the Lumino layout.
+  results: Svelte component source code can now be inspected and modified at run-time. Mocha unit tests can be written and run, and MDsveX documentation edited and rendered. The component inspector and editor are implemented in terms of Svelte components, meaning that the development environment can automatically inspect and edit itself. Web applications transformed in this way are infinitely editable by end users.
+  links:
+    - type: Video proof of concept
+      link: https://www.youtube.com/watch?v=ZDhJLdhSvGs
+    - type: "Repository: component source transformation"
+      link: https://github.com/cameronrking/rollup-plugin-svelte-component-ioc
+    - type: "Repository: injecting the editor layout into the application root"
+      link: https://github.com/cameronrking/rollup-plugin-layout-intercept
+    - type: "Repository: providing the inspector and editor components"
+      link: https://github.com/cameronrking/rollup-plugin-ioc-editing-tools
+
+- name: Olympus
+  timeline: Winter 2019 - Summer 2020 (intermittent work)
+  summary: Rapid expression of intent for Vue and TailwindCSS interactions in Visual Studio Code.
+  tech_used: JavaScript, Visual Studio Code, Vue, TailwindCSS
+  problem: I think out loud as a general strategy. As I worked on previous projects, I noticed that I would verbalize many operations repeatedly, but they took several seconds to complete by hand. Snippets were not a good fit, as many of these operations involved restructuring existing code in complex ways.
+  solution: "I discovered abstract syntax tree manipulation via research into code generation. Olympus was then developed in a simple loop: I would observe myself at work and notice common verbalizations, implement them in terms of AST manipulations, and finally construct a semantic keyboard-driven interface for rapidly interacting with these transformations while programming."
+  results: "Most conceptual operations on Vue components have been reduced to four or five semantic keypresses that can be completed from anywhere in the file. Names are autofilled to further reduce typing. Tailwind class alternatives can be explored in code with immediate visual feedback (without file save or browser reload) via a single keypress."
+  links:
+    - type: Repository
+      link: https://github.com/CameronRKing/olympus
+    - type: VSCode Extension Homepage
+      link: https://marketplace.visualstudio.com/items?itemName=CameronKing.olympus
+
+- name: Recess Front Desk
+  timeline: Spring 2018 - Spring 2020
+  summary: Custom PWAs to support evolving coach/client interactions in a unique fitness startup.
+  tech_used: Vue, Firebase, Postman
+  problem: Recess was a Memphis-based fitness startup premised on the belief that fitness should be fun, not work. To that end, it experimented with alternative models of user experience. However, no existing gym management software met all of Recess' unique needs, or could match the rate at which they changed.
+  solution: I played several roles over time, including "guidance counselor" (front desk employee helping clients understand and navigate our unique structure), mobility coach, and salesperson. Having a deep understanding of the holistic customer experience and the friction points of our supporting software, I wrote PWAs for our client-facing tablets to address bottlenecks in new client registration, class checkin, and membership sales.
+  results: A front desk worker on a desktop with three customer-facing tablets became able to single-handedly manage customer load that used to require assistance from one to three coaches. Coaches were freed to focus on client relations and class prep, while those clients were provided with a more streamlined, user-friendly onboarding experience.
+  links:
+    - type: Company site
+      link: https://recess901.com
+
+- name: Cantopia
+  timeline: Spring 2017 - Spring 2020
+  summary: A competitive simulation game for sales force management students.
+  tech_used: Vue, Laravel, SQLite, Firebase
+  problem: Business classes often use simulations to engage students and better convey real-world skills and situations. Dr. Greg Rich had used a simulation game in his sales force management class in the past, but it was out of print, and he wasn't entirely happy with the existing alternatives.
+  solution: Together, we formulated a new simulation game with an emphasis on student competition (as opposed to playing against a computer). Over the years, we've worked closely with academic users to deal with scaling issues, design friction, and improve learning objectives.
+  results: Cantopia has been used by hundreds of students at dozens of universities, and has become a regular fixture in several classrooms. Student feedback is overwhelmingly positive, with many preferring Cantopia to other simulation games that they have played.
+  links:
+    - type: Site
+      link: https://cantopiasimulation.com
+
+- name: pleaseinterrupt.me
+  timeline: Spring 2017
+  summary: A classroom utility for encouraging students to ask high-quality questions.
+  tech_used: Vue, Laravel, Pusher, Redis
+  problem: My critical thinking teacher, Dr. M. Neil Browne, had been trying to get students to ask more questions during class for many years. In the past, he'd tried handing out colored flags for students to raise. My freshman year, he gave us foam balls to throw at him. Nothing worked.
+  solution: I was the peer facilitator for Dr. Browne's Critical Thinking About Great Ideas class and a programmer curious about the Pusher service, so I implemented a shared digital space. The teacher provided questions and set the conditions of their use, and students asked these questions anonymously via tapping a button on any device. The site was brought up on a prominent monitor at the start of each class.
+  results: The students did use this application, but only a few times. However, the professor and I felt that the mere presence of the application changed the tenor of classroom discussion. Even though students didn't use it frequently, we hypothesized that the possibility of anonymous digital questioning reduced a psychological barrier to asking questions in real life. Though there was some initial friction that I often had to overcome by asking the first few questions, once the ball was in motion, students engaged freely with the professor. As this was an informal experiment, we gathered no hard data, so it is possible that the effects were entirely imagined.
+  links:
+    - type: Repository
+      link: https://github.com/cameronrking/pleaseinterrupt.me
+
+- name: "Senior Thesis: Computational Metaheuristics Applied to Novel Variations of the p-Median Problem"
+  timeline: Fall 2016 - Spring 2017
+  summary: Applying heuristic solution methods to novel facility allocation problems.
+  tech_used: C++, SQLite, Python/Pandas
+  problem: One of my thesis advisors had been experimenting with linear programming solution methods to facility allocation problems with unusual goals. These linear programming solution methods proved to be intractable in traditional optimizers (taking over 24 hours to solve a single problem), and new goals required new, complex linear programming representations.
+  solution: I investigated various metaheuristics and implemented two--Discrete Particle Swarm Optimization (DPSO) and Adaptive Large Neighborhood Search (ALNS)--along with a simple problem taxonomy that allowed easy representation of novel goals for the purposes of these algorithms.
+  results: Both algorithms were able to produce reasonable solutions to traditional problem sets in less than a second to several minutes, depending on the size of the problem. Unfortunately, since we didn't have provably optimal solutions to compare against, the actual solution efficacy of these algorithms remains unknown.
+  links:
+    - type: Repository
+      link: https://github.com/CameronRKing/cdflm-web
